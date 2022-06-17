@@ -8,10 +8,10 @@ def job_scrapper(poste: str, lieu: str, site="https://fr.indeed.com/", npages=5)
     """Pour extraire les informations d'offres d'emplois sur indeed.com
 
     Args:
-        poste (_type_): Type de poste recherché.
-        lieu (_type_): Localisation du poste recherché.
-        site (str, optional): Site d'emplois à utiliser comme source de données. Defaults to "https://fr.indeed.com/".
-        npages (int, optional): Parcourir les n-premières pages. Defaults to 5.
+        poste (_type_): Type de poste recherché,
+        lieu (_type_): Localisation du poste recherché,
+        site (str, optional): Site d'emplois à utiliser comme source de données, Defaults to "https://fr.indeed.com/"
+        npages (int, optional): Parcourir les n-premières pages, Defaults to 5
     """
 
     poste = poste.replace(" ", "%20") # %20 pour espace
@@ -99,4 +99,5 @@ def job_scrapper(poste: str, lieu: str, site="https://fr.indeed.com/", npages=5)
 
 if __name__ == "__main__":
     res = job_scrapper(poste="Data engineer", lieu="Paris", npages=1)
+    res.to_csv("data/jobs.csv")
     print(res)
